@@ -1,13 +1,19 @@
-import './App.css'
-import Header from './componentes/ui/Header.jsx'
-import Footer from './componentes/ui/Footer.jsx'
+import './App.css';
+import Header from './componentes/ui/Header';
+import Footer from './componentes/ui/Footer';
+import Numerosx from './componentes/num/Numerosx.jsx';
+import Operaciones from './componentes/operaciones/Operaciones.jsx';
+import Resultado from './componentes/resultado/Resultado.jsx';
 function App() {
 
-
+  
   return (
     <div>
-      <Header />
-      <Footer />
+      <Header/>
+      <Numerosx/>
+      <Operaciones/>
+      <Resultado/>
+      <Footer/>
     </div>
 
 
