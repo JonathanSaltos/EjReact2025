@@ -10,7 +10,7 @@ function Operaciones({ numero1, numero2, setResultado }) {
             </div>
 
             <div className="col-6  justify-content-center align-items-center">
-            <button type="button" class="btn btn-secondary">X</button>
+            <button type="button" class="btn btn-secondary" onClick = {() => setResultado(numero1*numero2)}>X</button>
 
             </div>
 
