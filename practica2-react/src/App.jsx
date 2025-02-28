@@ -7,10 +7,11 @@ import Operaciones from './componentes/operaciones/Operaciones.jsx';
 import Resultado from './componentes/resultado/Resultado.jsx';
 
 function App() {
-
+// creacion de 3 variables de estado
 const [numero1, setNumero1] = useState('');
 const [numero2, setNumero2] = useState('');
 const [resultado, setResultado] = useState('');
+
   return (
 
     <div>

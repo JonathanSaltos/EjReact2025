@@ -1,31 +1,57 @@
 import './operaciones.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+
+const renderTooltip = (texto) => (
+    <Tooltip id="button-tooltip">
+        {texto}
+    </Tooltip>
+);
 
 function Operaciones({ numero1, numero2, setResultado }) {
 
     return (
-        <div className="row text-center">
-            <div className="col-6  justify-content-center align-items-center">
-            <button type="button" class="btn btn-primary" onClick={() => setResultado(numero1 + numero2)}>+</button>
-            </div>
+        <div>
+            <Row className="row text-center">
+                <Col> <OverlayTrigger
+                    placement="top"
+                    overlay={renderTooltip('Sumar')}>
 
-            <div className="col-6  justify-content-center align-items-center">
-            <button type="button" class="btn btn-secondary" onClick = {() => setResultado(numero1*numero2)}>X</button>
+                    <Button type="button" variant="primary" onClick={() => setResultado(numero1 + numero2)}>+</Button>
 
-            </div>
 
-            <div className="col-6  justify-content-center align-items-center">
-            <button type="button" class="btn btn-danger"onClick = {() => setResultado(numero1-numero2)} >-</button>
+                </OverlayTrigger>
+                </Col>
 
-            </div>
+                <Col ><OverlayTrigger
+                    placement="top"
+                    overlay={renderTooltip('Multiplicar')}>
 
-            <div className="col-6  justify-content-center align-items-center">
-            <button type="button" class="btn btn-warning" onClick = {() => setResultado(numero1/numero2)}>%</button>
+                    <Button type="button" variant="secondary" onClick={() => setResultado(numero1 * numero2)}>X</Button></OverlayTrigger>
 
-            </div>
+                </Col>
+            </Row>
 
-            
-    
+            <Row className="row text-center">
+                <Col> <OverlayTrigger
+                    placement="top"
+                    overlay={renderTooltip('Restar')}>
+
+                    <Button type="button" variant="danger" onClick={() => setResultado(numero1-numero2)}>-</Button>
+
+                </OverlayTrigger>
+                </Col>
+
+                <Col><OverlayTrigger
+                    placement="top"
+                    overlay={renderTooltip('Dividir')}>
+
+                    <Button type="button" variant="warning" onClick={() => setResultado(numero1/numero2)}>%</Button></OverlayTrigger>
+
+                </Col>
+            </Row>
         </div>
 
     )
