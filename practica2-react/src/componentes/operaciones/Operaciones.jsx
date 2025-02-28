@@ -15,7 +15,7 @@ function Operaciones({ numero1, numero2, setResultado }) {
             </div>
 
             <div className="col-6  justify-content-center align-items-center">
-            <button type="button" class="btn btn-danger">-</button>
+            <button type="button" class="btn btn-danger"onClick = {() => setResultado(numero1-numero2)} >-</button>
 
             </div>
 
